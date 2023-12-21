@@ -13,8 +13,22 @@ matrix_t* matrixFile(const char* filename, const char* filename2) {
         return NULL;
     }
 
+    if(m != n) {
+        fprintf(stderr, "Macierz wspolczynnikow nie jest macierza kwadratowa\n");
+        fclose(file);
+        fclose(file2);
+        return NULL;
+    }
+
     int m2, n2;
     if(fscanf(file2, "%d %d", &m2, &n2) == 0) {    
+        fclose(file);
+        fclose(file2);
+        return NULL;
+    }
+
+    if(n2 != 1) {
+        fprintf(stderr, "Macierz wyrazow wolnych powinna miec 1 kolumne\n");
         fclose(file);
         fclose(file2);
         return NULL;
