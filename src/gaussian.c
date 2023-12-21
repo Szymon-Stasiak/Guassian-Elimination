@@ -17,7 +17,7 @@ int swapRow(matrix_t* matrix, int columnNum) {
 }
 
 int solveGaus(matrix_t* mat) {
-    int min_s = (mat->i_w > mat->i_k)? mat->i_w : mat->i_k;
+    int min_s = (mat->i_w < mat->i_k)? mat->i_w : mat->i_k;
     for(int i=0; i<min_s; i++) {
         swapRow(mat, i);
         if(mat->m[i][i] == 0) {

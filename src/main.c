@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-    //solveGaus(mat);
+    solveGaus(mat);
     printMatrix(mat);
     countSolutions(mat);
     freeMatrix(mat);
