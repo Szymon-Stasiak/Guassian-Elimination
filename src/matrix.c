@@ -55,8 +55,9 @@ void countSolutions(matrix_t* mat) {
         solutions[i]=temp;        
     }
     printf("\n");
-    for(int i=mat->i_w-1; i>=0; i--) {
-    	printf("x %lf " ,solutions[i]);
+    for(int i=0; i<mat->i_w; i++) {
+    	printf("x%d = %lf " ,i+1,solutions[i]);
+    	printf ("\n");
     }
      printf("\n");
 }
