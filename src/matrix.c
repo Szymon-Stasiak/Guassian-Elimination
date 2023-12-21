@@ -47,9 +47,14 @@ void freeMatrix(matrix_t* mat) {
 void countSolutions(matrix_t* mat) {
  	
  	double solutions[mat->i_w];
+ 	int last = mat->i_k-2;
     for(int i=mat->i_w-1; i>=0; i--) {
     	double temp=mat->m[i][mat->i_k-1];
         for(int j=0; j<mat->i_k; j++) {
+        if(j==last){
+        	temp=temp/mat->m[i][j];
+        }
+        else
         temp-=mat->m[i][j]*solutions[j];
         }
         solutions[i]=temp;        
