@@ -1,0 +1,1 @@
+clang -Wall --pedantic src/*.c -o bin/gauss
