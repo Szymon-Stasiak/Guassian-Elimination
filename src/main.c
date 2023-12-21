@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
     }
 
     solveGaus(mat);
+    printf("Macierz po odpowiednich przeksztalceniach: \n");
     printMatrix(mat);
     countSolutions(mat);
     freeMatrix(mat);
