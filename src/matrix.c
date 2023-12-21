@@ -50,14 +50,11 @@ void countSolutions(matrix_t* mat) {
  	int last = mat->i_k-2;
     for(int i=mat->i_w-1; i>=0; i--) {
     	double temp=mat->m[i][mat->i_k-1];
-        for(int j=0; j<mat->i_k; j++) {
-        if(j==last){
-        	temp=temp/mat->m[i][j];
-        }
-        else
+        for(int j=0; j<mat->i_k; j++) {    
         temp-=mat->m[i][j]*solutions[j];
-        }
-        solutions[i]=temp;        
+       }
+        solutions[i]=temp/mat->m[i][last];  
+        last--;      
     }
     printf("\n");
     for(int i=0; i<mat->i_w; i++) {
