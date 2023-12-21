@@ -1,1 +1,2 @@
-clang -Wall --pedantic src/*.c -o bin/gauss
+all:
+	gcc -Wall --pedantic src/*.c -o bin/gauss
