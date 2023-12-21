@@ -46,17 +46,17 @@ void freeMatrix(matrix_t* mat) {
 
 void countSolutions(matrix_t* mat) {
  	
- 	double solutions[mat->i_w]={0};
+ 	double solutions[mat->i_w];
     for(int i=mat->i_w-1; i>=0; i--) {
-    	double temp=[i][mat->k-1];
+    	double temp=mat->m[i][mat->i_k-1];
         for(int j=0; j<mat->i_k; j++) {
-        temp-=mat->m[i][j]*soultions[j];
-            printf("%lf ", mat->m[i][j]);
-            
+        temp-=mat->m[i][j]*solutions[j];
         }
         solutions[i]=temp;
+        printf("\n");
     }
     for(int i=mat->i_w-1; i>=0; i--) {
-    	printf("x %lf " ,soultions[i]);
+    	printf("x %lf " ,solutions[i]);
     }
+     printf("\n");
 }
